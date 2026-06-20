@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+samuel_output/
+eralyon_output/
+wplace_output/
