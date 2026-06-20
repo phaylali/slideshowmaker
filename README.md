@@ -28,7 +28,7 @@ Output is saved to `eralyon_output/run_<timestamp>/` or `samuel_output/run_<time
 
 - Python 3
 - [Playwright for Python](https://playwright.dev/python/) (auto-installed if missing)
-- [FFmpeg](https://ffmpeg.org/) (`apt install ffmpeg`)
+- [FFmpeg](https://ffmpeg.org/) (`yay -S ffmpeg`)
 
 ---
 
