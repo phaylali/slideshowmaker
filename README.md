@@ -30,6 +30,12 @@ Output is saved to `eralyon_output/run_<timestamp>/` or `samuel_output/run_<time
 - [Playwright for Python](https://playwright.dev/python/) (auto-installed if missing)
 - [FFmpeg](https://ffmpeg.org/) (`yay -S ffmpeg`)
 
+## Future Features
+
+- **Date range filtering** — `./start.sh eralyon s=06-12-2025 e=07-02-2026` to capture only a specific window of snapshots
+- **Configurable frame rate** — `fps=4` to control how many frames per second in the final video (default: 4)
+- Both flags can be combined: `./start.sh eralyon s=01-01-2026 e=01-06-2026 fps=2`
+
 ---
 
 &copy; 2026 [Omniversify](https://omniversify.com). All rights reserved.

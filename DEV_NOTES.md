@@ -78,6 +78,20 @@ MapLibre adds `.maplibregl-tile-loading` and `.maplibregl-image-loading` classes
 
 Snapshots are captured in **oldest → newest** order (left → right on the slider). For eralyon the iteration is `range(min, max+1)`. FFmpeg assembles them in filename order (zero-padded index: `000_9 August 2025.png`, `001_10 August 2025.png`, …).
 
+## Planned Implementation
+
+### Date range filtering
+
+```
+./start.sh eralyon s=06-12-2025 e=07-02-2026 fps=4
+```
+
+- `s=<dd-mm-yyyy>` — start date, inclusive. Snapshots before this are skipped.
+- `e=<dd-mm-yyyy>` — end date, inclusive. Snapshots after this are skipped.
+- `fps=<int>` — framerate for the output MP4 (default 4). Each frame = 1/fps seconds on screen.
+
+Implementation: pass extra args from `start.sh` to the Python script. In Python, parse the slider date labels and compare with the user's date range, only capturing frames that fall within the window. The fps is passed directly to FFmpeg's `-framerate`.
+
 ## Weird Selectors
 
 Samuel's site sometimes uses `.maplibregl-*` selectors even though the DOM shows `.maplibregl-*` — MapLibre GL JS v4+ uses `.maplibregl-` prefixes by default (forked from Mapbox GL). The eralyon site uses MapLibre GL v5.7.1.
